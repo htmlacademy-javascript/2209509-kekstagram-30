@@ -26,7 +26,7 @@ isPalidrom('топот'); // true
 // Несмотря на разный регистр, тоже палиндром
 isPalidrom('ДовОд'); // true
 // Это не палиндром
-isPalidrom('Кекс');  // false
+isPalidrom('Кекс'); // false
 
 function number(arg) {
   const string = arg.toString();
@@ -39,8 +39,8 @@ function number(arg) {
   return parseInt(result, 10);
 }
 
-number('2023 год');            // 2023
-number('ECMAScript 2022');     // 2022
+number('2023 год'); // 2023
+number('ECMAScript 2022'); // 2022
 number('1 кефир, 0.5 батона'); // 105
-number('агент 007');           // 7
-number('а я томат');           // NaN
+number('агент 007'); // 7
+number('а я томат'); // Nan
