@@ -11,15 +11,11 @@ checkingString('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
 checkingString('проверяемая строка', 11); // false
 
-function isPalidrom(rawString) {
+const isPalidrom = (rawString) => {
   const string = rawString.replaceAll(' ', '').toLowerCase();
-  for (let i = 0; i < string.length / 2; i++) {
-    if (string.at(i) !== string.at(-i - 1)) {
-      return false;
-    }
-  }
-  return true;
-}
+  const reverse = string.split('').reverse().join('');
+  return string === reverse;
+};
 
 // Строка является палиндромом
 isPalidrom('топот'); // true
@@ -28,7 +24,7 @@ isPalidrom('ДовОд'); // true
 // Это не палиндром
 isPalidrom('Кекс'); // false
 
-function number(arg) {
+const number = (arg) => {
   const string = arg.toString();
   let result = '';
   for (let i = 0; i < string.length; i++) {
@@ -37,7 +33,7 @@ function number(arg) {
     }
   }
   return parseInt(result, 10);
-}
+};
 
 number('2023 год'); // 2023
 number('ECMAScript 2022'); // 2022
