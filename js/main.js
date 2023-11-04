@@ -1,24 +1,6 @@
-const DESCRIPTION = [
-  'Интересное фото',
-  'Природа',
-  'Море',
-  'Деревья',
-  'Небо',
-  'Животные',
-  'Закат',
-  'Необычное фото',
-];
-
-const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
-
-const createComment = () => [
-  'Комментарий',
-];
+import {DESCRIPTION} from './DESCRIPTION.js';
+import {getRandomInteger} from './getRandomInteger.js';
+import {createComment} from './createComment.js';
 
 const createID = () => {
   const randomIDIndex = getRandomInteger(0, 25);
