@@ -1,6 +1,6 @@
-import {DESCRIPTION} from './DESCRIPTION.js';
-import {getRandomInteger} from './getRandomInteger.js';
-import {createComment} from './createComment.js';
+import {DESCRIPTION} from './constants.js';
+import {getRandomInteger} from './get-random-integer.js';
+import {createComment} from './create-comment.js';
 
 const createID = () => {
   const randomIDIndex = getRandomInteger(0, 25);
