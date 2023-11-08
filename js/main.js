@@ -8,7 +8,6 @@ const createID = () => {
   const randomDescriptionIndex = getRandomInteger(0, DESCRIPTION.length - 1);
   const randomLikesIndex = getRandomInteger(1, 200);
   const randomAvatarIndex = getRandomInteger(1, 6);
-  const similarComment = Array.from({length: getRandomInteger(1, 30)}, createComment);
 
   return {
     id: randomIDIndex,
@@ -16,7 +15,7 @@ const createID = () => {
     avatar: String(`img/avatar-${ randomAvatarIndex }.svg.`),
     description: DESCRIPTION[randomDescriptionIndex],
     likes: randomLikesIndex,
-    comment: similarComment,
+    comment: createComment,
   };
 };
 
