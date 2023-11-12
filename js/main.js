@@ -11,12 +11,16 @@ const createID = () => {
 
   return {
     id: randomIDIndex,
-    url: String(`photos/${ randomAdressIndex }.jpg.`),
+    url: String(`photos/${ randomAdressIndex }.jpg`),
     description: DESCRIPTION[randomDescriptionIndex],
     likes: randomLikesIndex,
     comment: similarComment,
   };
 };
-renderMiniature(createID());
 
-export const similarCommentId = Array.from({length: 25}, createID);
+const similarCommentId = () => Array.from(
+  { length: 25 },
+  (_, pictureIndex) => createID(pictureIndex + 1),
+);
+
+renderMiniature(similarCommentId());
