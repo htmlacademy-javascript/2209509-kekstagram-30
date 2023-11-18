@@ -5,7 +5,8 @@ const createMiniature = ({
   url,
   description,
   likes,
-  comment
+  comment,
+  id
 }) => {
   const miniature = miniatureTemplate.cloneNode(true);
 
@@ -13,6 +14,7 @@ const createMiniature = ({
   miniature.querySelector('.picture__img').alt = description;
   miniature.querySelector('.picture__comments').textContent = comment.length;
   miniature.querySelector('.picture__likes').textContent = likes;
+  miniature.dataset.miniatureId = id;
 
   return miniature;
 };

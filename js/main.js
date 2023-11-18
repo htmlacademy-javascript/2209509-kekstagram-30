@@ -1,7 +1,7 @@
 import {DESCRIPTION} from './constants.js';
 import {getRandomInteger} from './get-random-integer.js';
 import {similarComment} from './create-comment.js';
-import {renderMiniature} from './miniature.js';
+import {renderGallery} from './gallery.js';
 
 const createID = () => {
   const randomIDIndex = getRandomInteger(0, 25);
@@ -23,4 +23,4 @@ const similarCommentId = () => Array.from(
   (_, pictureIndex) => createID(pictureIndex + 1),
 );
 
-renderMiniature(similarCommentId());
+renderGallery(similarCommentId());
