@@ -1,3 +1,4 @@
+import {renderComments, initCommentList} from './comment.js';
 const bigPictureElement = document.querySelector('.big-picture');
 const bodyElement = document.querySelector('body');
 const closePictureButtonElement = bigPictureElement.querySelector('.big-picture__cancel');
@@ -30,6 +31,10 @@ const showPicture = (pictureData) => {
   bigPictureElement.classList.remove('hidden');
   bodyElement.classList.add('modal-open');
   document.addEventListener('keydown', onDocumentKeyDown);
+
+  renderComments(pictureData.comment);
+
+  initCommentList();
 
   renderPicture(pictureData);
 };
