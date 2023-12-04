@@ -1,3 +1,5 @@
+import {init} from './effect.js';
+
 const MAX_HASHTAG_COUNT = 5;
 const VALID_SINVOLS = /^#[a-za-яё0-9]{1, 19}$/i;
 const ErrorText = {
@@ -93,3 +95,4 @@ pristine.addValidator(
 
 fileField.addEventListener('change', onFileInputChange);
 cancelButton.addEventListener('change', onCancelButtonClick);
+init();
