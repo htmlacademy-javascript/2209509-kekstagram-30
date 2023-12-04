@@ -1,5 +1,7 @@
+import {init} from './effect.js';
+
 const MAX_HASHTAG_COUNT = 5;
-const VALID_SINBOLS = /^#[a-za-яё0-9]{1, 19}$/i;
+const VALID_SINVOLS = /^#[a-za-яё0-9]{1, 19}$/i;
 const ErrorText = {
   INVALID_COUNT: `Максимум ${MAX_HASHTAG_COUNT} хештегов`,
   NOT_INQUE: 'Хештеги не должны повторяться',
@@ -43,7 +45,7 @@ const normalizeTags = (tagString) => tagString
   .split('')
   .filter((tag) => Boolean(tag.length));
 
-const hasValidTags = (value) => normalizeTags(value).every((tag) => VALID_SINBOLS.test(tag));
+const hasValidTags = (value) => normalizeTags(value).every((tag) => VALID_SINVOLS.test(tag));
 
 const hasValidCount = (value) => normalizeTags(value).length <= MAX_HASHTAG_COUNT;
 
@@ -93,3 +95,4 @@ pristine.addValidator(
 
 fileField.addEventListener('change', onFileInputChange);
 cancelButton.addEventListener('change', onCancelButtonClick);
+init();
